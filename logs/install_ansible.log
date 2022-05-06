@@ -1,0 +1,110 @@
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+ * base: centos.crazyfrogs.org
+ * epel: mirror.23m.com
+ * extras: centos.crazyfrogs.org
+ * updates: centos.mirrors.proxad.net
+Resolving Dependencies
+--> Running transaction check
+---> Package ansible.noarch 0:2.9.27-1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch             Version                Repository      Size
+================================================================================
+Installing:
+ ansible           noarch           2.9.27-1.el7           epel            17 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 17 M
+Installed size: 103 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : ansible-2.9.27-1.el7.noarch                                  1/1 
+  Verifying  : ansible-2.9.27-1.el7.noarch                                  1/1 
+
+Installed:
+  ansible.noarch 0:2.9.27-1.el7                                                 
+
+Complete!
+[WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+[WARNING]: While constructing a mapping from /vagrant/ansible/cloud-
+playbook.yml, line 61, column 3, found a duplicate dict key (command). Using
+last defined value only.
+[WARNING]: While constructing a mapping from /vagrant/ansible/cloud-
+playbook.yml, line 68, column 3, found a duplicate dict key (command). Using
+last defined value only.
+ERROR! 'command' is not a valid attribute for a Play
+
+The error appears to be in '/vagrant/ansible/cloud-playbook.yml': line 51, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: run vagrant pfsense machine
+  ^ here
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+ * base: centos.mirrors.proxad.net
+ * epel: mirror.23m.com
+ * extras: centos.crazyfrogs.org
+ * updates: centos.mirrors.proxad.net
+Resolving Dependencies
+--> Running transaction check
+---> Package ansible.noarch 0:2.9.27-1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch             Version                Repository      Size
+================================================================================
+Installing:
+ ansible           noarch           2.9.27-1.el7           epel            17 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 17 M
+Installed size: 103 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : ansible-2.9.27-1.el7.noarch                                  1/1 
+  Verifying  : ansible-2.9.27-1.el7.noarch                                  1/1 
+
+Installed:
+  ansible.noarch 0:2.9.27-1.el7                                                 
+
+Complete!
+[WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+[WARNING]: While constructing a mapping from /vagrant/ansible/cloud-
+playbook.yml, line 57, column 5, found a duplicate dict key (command). Using
+last defined value only.
+[WARNING]: While constructing a mapping from /vagrant/ansible/cloud-
+playbook.yml, line 65, column 5, found a duplicate dict key (command). Using
+last defined value only.
+ERROR! conflicting action statements: hosts, command
+
+The error appears to be in '/vagrant/ansible/cloud-playbook.yml': line 65, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+  - name: run vagrant web machines
+    ^ here

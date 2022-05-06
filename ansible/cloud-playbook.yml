@@ -1,0 +1,68 @@
+---
+- hosts: admin
+  tasks:
+  - name: copying admin server files
+    become_user: etudiant
+    copy:
+      src: ../resources/admin-server/*
+      dest: /Data/etudiant/Cloud-ProjectS8/
+      owner: etudiant
+      group: etudiant
+      mode: '0755'
+
+- hosts: web
+  tasks:
+  - name: copying web server files
+    become_user: etudiant
+    copy:
+      src: ../resources/web-server/*
+      dest: /Data/etudiant/Cloud-ProjectS8/
+      owner: etudiant
+      group: etudiant
+      mode: '0755'
+
+- hosts: database
+  tasks:
+  - name: copying database server files
+    become_user: etudiant
+    copy:
+      src: ../resources/database-server/*
+      dest: /Data/etudiant/Cloud-ProjectS8/
+      owner: etudiant
+      group: etudiant
+      mode: '0755'
+
+- hosts: firewall
+  tasks:
+  - name: copying firewall server files
+    become_user: etudiant
+    copy:
+      src: ../resources/firewall-server/*
+      dest: /Data/etudiant/Cloud-ProjectS8/
+      owner: etudiant
+      group: etudiant
+      mode: '0755'
+  - name: run vagrant pfsense machine
+    become_user: etudiant
+    command: cd /Data/etudiant/Cloud-ProjectS8/srv-pfsense && vagrant up
+
+- hosts: database
+  tasks:
+  - name: run vagrant database machine
+    become_user: etudiant
+    command: cd /Data/etudiant/Cloud-ProjectS8/srv-database && vagrant up
+
+- hosts: admin
+  tasks:
+  - name: run vagrant admin machines
+    become_user: etudiant
+    command: /Data/etudiant/Cloud-ProjectS8/srv-gitea && vagrant up
+    command: /Data/etudiant/Cloud-ProjectS8/srv-zabbix && vagrant up
+    command: /Data/etudiant/Cloud-ProjectS8/srv-netbox && vagrant up
+
+- hosts: web
+  tasks:
+  - name: run vagrant web machines
+    become_user: etudiant
+    command: cd /Data/etudiant/Cloud-ProjectS8/srv-moodle && vagrant up
+    command: cd /Data/etudiant/Cloud-ProjectS8/srv-myadmin && vagrant up
